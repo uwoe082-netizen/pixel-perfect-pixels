@@ -118,7 +118,9 @@ export function subscribeSimantri(onChange: (patch: Partial<SimantriState>) => v
     ]);
     if (dibatalkan) return;
 
-    const app = getApps().length ? getApp() : initializeApp(firebaseConfig);
+    const app = getApps().length
+      ? getApp()
+      : initializeApp(firebaseConfig as { apiKey: string; databaseURL: string });
     const db = getDatabase(app);
 
     const unsubs = [

@@ -23,6 +23,8 @@ export const Route = createFileRoute("/")({
         content:
           "Tampilan layar TV Full HD untuk sistem antrean kantor SIMANTRI dengan status loket dan panggilan real-time.",
       },
+      { property: "og:type", content: "website" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
   }),
   component: LayarAntrean,
@@ -67,8 +69,18 @@ function LayarAntrean() {
     <main className="relative flex h-screen w-screen flex-col overflow-hidden bg-background">
       <TvHeader />
 
-      <div className="flex min-h-0 flex-1 flex-col gap-4 px-6 py-4">
-        <div className="grid shrink-0 grid-cols-6 gap-4">
+      <div className="grid min-h-0 flex-1 grid-cols-[minmax(0,2.55fr)_minmax(26rem,1fr)] gap-5 px-6 py-4">
+        <div className="flex min-h-0 flex-col justify-center">
+          <VideoPanel playlist={data.playlistVideo} diredam={sedangBersuara} />
+        </div>
+
+        <section className="flex min-h-0 flex-col overflow-hidden border-2 border-border bg-card shadow-tv">
+          <div className="shrink-0 border-b-2 border-primary bg-secondary px-5 py-3 text-center">
+            <h2 className="font-display text-[1.65rem] font-normal uppercase tracking-[0.08em] text-primary">
+              Status Loket Pelayanan
+            </h2>
+          </div>
+          <div className="grid min-h-0 flex-1 grid-rows-6">
           {DAFTAR_LOKET.map((loket) => {
             const entry = data.statusLoket[loket.id];
             const nonaktif = data.loketAktif[loket.id] === false;
@@ -82,10 +94,9 @@ function LayarAntrean() {
               />
             );
           })}
+          </div>
+        </section>
         </div>
-
-        <VideoPanel playlist={data.playlistVideo} diredam={sedangBersuara} />
-      </div>
 
       <Ticker teks={data.ticker} />
 

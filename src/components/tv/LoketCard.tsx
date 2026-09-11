@@ -37,40 +37,29 @@ export function LoketCard({ loket, nomor, status, nonaktif }: Props) {
   return (
     <article
       className={cn(
-        "relative flex flex-col overflow-hidden rounded-2xl border-2 border-border bg-card shadow-tv",
-        status === "melayani" && !nonaktif && "border-primary animate-loket-pulse",
+        "relative grid min-h-0 grid-cols-[0.65rem_minmax(0,1fr)_auto] items-stretch overflow-hidden border-b border-border bg-card last:border-b-0",
+        status === "melayani" && !nonaktif && "bg-secondary animate-loket-pulse",
         nonaktif && "opacity-40 saturate-50",
       )}
     >
-      <div className={cn("h-2 w-full", s.strip)} />
-
-      <div className="flex items-center justify-between px-5 pt-3">
-        <h2 className="font-display text-[1.7rem] leading-none font-black uppercase tracking-wide text-foreground">
+      <div className={cn("h-full w-full", s.strip)} />
+      <div className="flex min-w-0 flex-col justify-center px-5 py-2">
+        <h2 className="truncate font-display text-[1.75rem] leading-none font-normal uppercase text-foreground">
           {loket.nama}
         </h2>
-        <span className="grid size-9 place-items-center rounded-lg bg-secondary text-base font-black text-primary">
-          {loket.singkat}
+        <span className={cn("mt-1 w-fit text-[0.82rem] font-extrabold uppercase tracking-[0.12em]", s.nomor)}>
+          {LABEL_STATUS[nonaktif ? "offline" : status]}
         </span>
       </div>
-
-      <div className="flex flex-1 items-center justify-center px-4 py-1">
+      <div className="flex min-w-[9.2rem] items-center justify-end border-l border-border px-5">
         <span
           className={cn(
-            "font-display text-[4.6rem] leading-none font-black tabular-nums tracking-tight text-tv-shadow",
+            "font-display text-[3.2rem] leading-none font-normal tabular-nums text-tv-shadow",
             s.nomor,
           )}
         >
           {nonaktif ? "—" : nomor || "—"}
         </span>
-      </div>
-
-      <div
-        className={cn(
-          "px-5 py-2 text-center text-[1.15rem] font-black uppercase tracking-[0.14em]",
-          s.chip,
-        )}
-      >
-        {LABEL_STATUS[nonaktif ? "offline" : status]}
       </div>
     </article>
   );

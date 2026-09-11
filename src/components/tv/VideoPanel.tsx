@@ -44,7 +44,7 @@ export function VideoPanel({ playlist, diredam }: Props) {
   };
 
   return (
-    <section className="relative flex-1 overflow-hidden rounded-2xl border-2 border-border bg-panel-strong shadow-tv">
+    <section className="relative aspect-video w-full shrink-0 overflow-hidden border-2 border-border bg-panel-strong shadow-tv">
       {sumber ? (
         <video
           ref={videoRef}
@@ -83,7 +83,7 @@ export function VideoPanel({ playlist, diredam }: Props) {
       {gagal || !sumber ? (
         <div className="absolute inset-0 grid place-items-center bg-panel-strong px-10 text-center">
           <div>
-            <p className="font-display text-6xl font-black text-primary text-tv-shadow">SIMANTRI</p>
+            <p className="font-display text-7xl font-normal text-primary text-tv-shadow">SIMANTRI</p>
             <p className="mt-4 text-3xl font-bold uppercase tracking-[0.18em] text-muted-foreground">
               Melayani dengan cepat, ramah, dan transparan
             </p>
@@ -92,7 +92,7 @@ export function VideoPanel({ playlist, diredam }: Props) {
       ) : null}
 
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-panel-strong to-transparent" />
-      <div className="pointer-events-none absolute bottom-4 left-6 rounded-lg bg-panel-strong/80 px-4 py-1.5 text-lg font-bold uppercase tracking-[0.18em] text-primary">
+      <div className="pointer-events-none absolute bottom-4 left-6 border-l-4 border-primary bg-panel-strong/80 px-4 py-1.5 text-lg font-bold uppercase tracking-[0.18em] text-primary">
         Informasi Layanan
       </div>
     </section>

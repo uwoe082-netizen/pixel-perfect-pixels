@@ -53,7 +53,7 @@
   --color-panel: var(--panel);
   --color-panel-strong: var(--panel-strong);
 
-  --font-display: "Archivo", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Bebas Neue", ui-sans-serif, system-ui, sans-serif;
   --font-sans: "Barlow", ui-sans-serif, system-ui, sans-serif;
 
   --shadow-tv: 0 1.2rem 3rem oklch(0 0 0 / 0.45);
@@ -63,19 +63,19 @@
 :root {
   --radius: 1rem;
 
-  --background: oklch(0.18 0.032 62);
-  --foreground: oklch(0.97 0.014 85);
+  --background: oklch(0.2606 0.0257 56);
+  --foreground: oklch(0.9503 0.0265 87.85);
 
-  --card: oklch(0.25 0.045 62);
-  --card-foreground: oklch(0.97 0.014 85);
-  --popover: oklch(0.25 0.045 62);
-  --popover-foreground: oklch(0.97 0.014 85);
+  --card: oklch(0.3000 0.035 60);
+  --card-foreground: oklch(0.9503 0.0265 87.85);
+  --popover: oklch(0.3000 0.035 60);
+  --popover-foreground: oklch(0.9503 0.0265 87.85);
 
-  --primary: oklch(0.82 0.16 78);
-  --primary-foreground: oklch(0.2 0.05 60);
+  --primary: oklch(0.8060 0.1362 86.50);
+  --primary-foreground: oklch(0.2606 0.0257 56);
 
-  --secondary: oklch(0.33 0.055 62);
-  --secondary-foreground: oklch(0.97 0.014 85);
+  --secondary: oklch(0.3946 0.0581 67.66);
+  --secondary-foreground: oklch(0.9503 0.0265 87.85);
 
   --muted: oklch(0.3 0.04 62);
   --muted-foreground: oklch(0.78 0.035 78);
@@ -91,7 +91,7 @@
   --ring: oklch(0.82 0.16 78);
 
   --panel: oklch(0.23 0.04 62);
-  --panel-strong: oklch(0.15 0.028 62);
+  --panel-strong: oklch(0.205 0.026 56);
 
   --status-tersedia: oklch(0.72 0.17 150);
   --status-tersedia-foreground: oklch(0.16 0.04 150);
